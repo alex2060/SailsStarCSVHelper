@@ -1,0 +1,28 @@
+
+
+services:
+  app:
+    build: .
+    container_name: php-file-upload2
+    ports:
+      - "8080:10000"
+    volumes:
+      - ./uploads:/var/www/html/uploads
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared7
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token eyJhIjoiYmFlNjUxMWQwM2NjYWU1MWZmOTZkOGJiNTYzMDg1NTYiLCJ0IjoiNzY3ZDc2ZmItNDcyYi00Y2MyLWE4MzMtNTI4M2Y3OWU1ZTNkIiwicyI6Ill6VmxZalJrTm1ZdFpUbGxOeTAwWkRNMExXSTNOV010TnpZNU1qZG1ZVEpsWTJReiJ9
+    networks:
+      - app-network
+    depends_on:
+      - app
+
+networks:
+  app-network:
+    driver: bridge
+
