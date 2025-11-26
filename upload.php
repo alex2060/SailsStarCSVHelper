@@ -120,7 +120,7 @@ function processAndUploadCSV($input_filename, $tablename) {
 
     // Upload file
     echo "inhere\n";
-    $url = "https://pop9.aimachengine.com/upload";
+    $url = "https://scheduler.slqmyadmin.com/upload";
     $file_path = $task_filename;
     echo $file_path;
     if (file_exists($file_path)) {
@@ -259,7 +259,7 @@ function processAndUploadCSVRunTranscibe($input_filename, $tablename) {
 
 
     // Upload file
-    $url = "https://pop9.aimachengine.com/upload";
+    $url = "https://scheduler.slqmyadmin.com/upload";
     $file_path = $task_filename;
 
     if (file_exists($file_path)) {

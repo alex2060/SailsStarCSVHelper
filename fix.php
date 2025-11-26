@@ -1,11 +1,14 @@
 <?php
-$host = 'mysql-199933-0.cloudclusters.net';
+$host = '192.168.1.208';
 $port = 10033;
-$user = 'admin';
-$password = 'RQApoaNQ';
+$user = 'your_username';
+$password = 'your_password';
 $database = 'working_db';
 
-// Create connection
+
+
+
+// Create connectionaa
 $connection = new mysqli($host, $user, $password, $database, $port);
 
 // Check connection
